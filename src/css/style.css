@@ -1,0 +1,640 @@
+:root {
+  --bg-color: rgb(220, 220, 220);
+  --container-bg: rgb(252, 252, 252);
+  --primary-color-text: rgb(14, 14, 14);
+  --secondary-color-text: rgb(75, 75, 75);
+}
+.flex-standart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color);
+  display: flex;
+}
+/* aside */
+aside#lateral-menu {
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--container-bg);
+  width: 23rem;
+  padding: 1rem 0.4rem;
+}
+.btn-aside-close {
+  display: none;
+}
+.title-styled,
+.title-styled a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color-text);
+  gap: 5px;
+  cursor: pointer;
+}
+.title-styled a ion-icon {
+  padding: 5px;
+  border-radius: 7px;
+  font-size: 20px;
+  color: var(--container-bg);
+  background-color: var(--primary-color-text);
+}
+.reorganizar-pagina {
+  width: 100%;
+  padding: 0 1rem;
+  flex-direction: column;
+  gap: 5px;
+}
+.reorganizar-pagina .title-styled {
+  width: 100%;
+  justify-content: start;
+}
+.reorganizar-pagina .title-styled ion-icon {
+  font-size: 1.3rem;
+}
+#home-all,
+#home-arquives {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 10px;
+  gap: 1rem;
+  transition: 0.3s ease;
+}
+#home-all:hover,
+#home-arquives:hover {
+  background-color: var(--bg-color);
+}
+.tags-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0 1.6rem;
+  color: var(--secondary-color-text);
+}
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+.tag input {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.tag label {
+  cursor: pointer;
+}
+/* main */
+
+main {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+/* main-header */
+.main-header {
+  height: 5rem;
+  background-color: var(--container-bg);
+  border-left: 1px solid var(--bg-color);
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+.btn-aside-show {
+  border: 2px solid var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.btn-aside-show:hover {
+  background-color: var(--secondary-color-text);
+  color: var(--container-bg);
+}
+.search-book {
+  background-color: white;
+  width: 20rem;
+  height: 2.5rem;
+  padding: 0 10px 0 5px;
+  justify-content: start;
+  gap: 10px;
+  font-size: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+.search-book ion-icon {
+  padding: 0 5px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.search-book ion-icon:hover {
+  background-color: var(--secondary-color-text);
+  color: var(--container-bg);
+}
+.search-book input {
+  width: 100%;
+  height: 2rem;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: var(--secondary-color-text);
+}
+.btn-add-bookmark {
+  background-color: var(--secondary-color-text);
+  color: var(--container-bg);
+  font-size: 18px;
+  padding: 0.4rem 1rem;
+  gap: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-add-bookmark ion-icon {
+  height: 2rem;
+  width: 2rem;
+}
+.btn-add-bookmark:hover {
+  background-color: var(--bg-color);
+  color: var(--primary-color-text);
+}
+.perfil-photo {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: var(--secondary-color-text);
+}
+.perfil-photo img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* main-article-all-bookmarker */
+.all-bookmarks {
+  padding: 1rem;
+  position: relative;
+}
+.all-bookmarks-header {
+  padding: 1rem;
+  justify-content: space-between;
+}
+.btn-order-by {
+  padding: 10px;
+  box-shadow: 0.5px 0.5px 3px 1px var(--secondary-color-text);
+  background-color: var(--container-bg);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-order-by ion-icon:nth-child(1) {
+  margin-right: -6px;
+}
+
+/* container-card-bookmarker */
+.bookmark-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card-bookmark {
+  min-width: 320px;
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--container-bg);
+  padding: 10px;
+  border-radius: 10px;
+}
+.card-bookmark.archived-card {
+  opacity: 0.6;
+  border: 1px dashed #888;
+}
+/* header card */
+.header-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--bg-color);
+}
+.div-card-name {
+  text-align: center;
+}
+.div-card-name h4 {
+  font-size: 24px;
+}
+.div-card-name a {
+  color: var(--secondary-color-text);
+}
+.opt-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid var(--secondary-color-text);
+  height: 2rem;
+  width: 1.3rem;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.opt-card:hover {
+  background-color: var(--secondary-color-text);
+  color: var(--container-bg);
+}
+.div-opt-menu {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.542);
+  position: absolute;
+  right: 1.8rem;
+  top: 3rem;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.div-opt-menu.show {
+  display: flex;
+}
+.div-opt-menu p {
+  background-color: var(--container-bg);
+  border: 2px solid var(--bg-color);
+  border-radius: 10px;
+  padding: 3px 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.div-opt-menu p:hover {
+  background-color: var(--secondary-color-text);
+  color: var(--container-bg);
+}
+/* body card */
+.body-card-bookmark {
+  height: 70%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--bg-color);
+}
+.description-card {
+  color: var(--secondary-color-text);
+  word-spacing: 5px;
+}
+.tags-body-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tag-span {
+  padding: 3px 5px;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  color: var(--secondary-color-text);
+}
+
+/* footer card */
+.footer-card {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.archive-pin {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 1px;
+  border-radius: 5px;
+}
+.archive-pin.marc {
+  box-shadow: 1px 1px 1px 4px var(--secondary-color-text);
+}
+
+/* modal bookmarker add */
+.overlay-modal {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 91.5%;
+  bottom: 0;
+  background-color: black;
+  opacity: 0;
+  transition: 0.2s ease;
+  display: none;
+}
+.overlay-modal.dark {
+  opacity: 0.4;
+  display: block;
+}
+
+.modal-add-bookmarks {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  min-width: 320px;
+  padding: 1rem;
+  background-color: var(--container-bg);
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 0;
+}
+.modal-add-bookmarks.active {
+  display: flex;
+}
+.modal-header {
+  width: 100%;
+  position: relative;
+}
+.modal-header h3 {
+  font-size: 30px;
+  text-decoration: underline;
+}
+.close-modal {
+  background-color: transparent;
+  color: var(--secondary-color-text);
+  border: 2px solid var(--secondary-color-text);
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.close-modal:hover {
+  color: white;
+  background-color: red;
+  border: 2px solid red;
+}
+
+/* ,modal form */
+
+.form-bookmark {
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 1rem 3rem;
+  width: 100%;
+}
+.form-div {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  position: relative;
+}
+.form-div input {
+  flex: 1;
+  height: 30px;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.form-div:nth-child(3) {
+  flex-direction: column;
+  align-items: start;
+}
+.form-div textarea {
+  width: 100%;
+  padding: 5px;
+  height: 7rem;
+  border: 2px solid var(--bg-color);
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+.selectTagsContainer {
+  height: 1.7rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  border: 1px solid var(--bg-color);
+  border-radius: 5px;
+  position: absolute;
+  left: calc(100% - 79%);
+  background: var(--container-bg);
+  overflow: hidden;
+  transition: 0.2s ease;
+}
+
+.selectTagsContainer.expand {
+  height: 28rem;
+}
+.selectTagsContainer .tag {
+  width: 100%;
+}
+.selectTagsContainer input {
+  display: none;
+}
+.selectTagsContainer label {
+  display: block;
+  width: 100%;
+  padding: 2px 5px;
+  pointer-events: none;
+  opacity: 0;
+}
+.selectTagsContainer.expand label {
+  pointer-events: all;
+  opacity: 1;
+}
+.selectTagsContainer label.checked-tag {
+  color: var(--container-bg);
+  background-color: var(--secondary-color-text);
+}
+.selectTagsContainer label:hover {
+  background-color: var(--bg-color);
+}
+#bookmark-add-btn {
+  height: 2.3rem;
+  width: 15rem;
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+#bookmark-add-btn:hover {
+  background-color: var(--secondary-color-text);
+  color: var(--container-bg);
+}
+@media (max-width: 1024px) {
+  .btn-aside-show {
+    display: flex;
+  }
+
+  aside#lateral-menu {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 17rem;
+    height: 100vh;
+    padding: 10px;
+    gap: 10px;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 0.2s ease;
+  }
+  aside#lateral-menu.show-aside {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .btn-aside-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 4;
+    width: 20px;
+    height: 100px;
+    background-color: var(--bg-color);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-aside-close:hover {
+    background-color: var(--secondary-color-text);
+    color: var(--bg-color);
+  }
+  .btn-add-bookmark span {
+    display: none;
+  }
+  .reorganizar-pagina {
+    gap: 5px;
+  }
+  .tags-container {
+    justify-content: flex-start;
+    gap: 10px;
+    overflow: auto;
+  }
+  .main-header {
+    padding: 5px 10px;
+    height: 60px;
+  }
+  .container-add-bookmark {
+    gap: 5px;
+  }
+  .btn-add-bookmark {
+    padding: 5px 5px;
+  }
+  .perfil-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+  }
+  .perfil-photo img {
+    width: 40px;
+    height: 40px;
+  }
+  .all-bookmarks {
+    padding: 10px;
+  }
+  .all-bookmarks-header {
+    padding: 10px;
+  }
+  .bookmark-container {
+    justify-content: center;
+    padding: 5px;
+  }
+  .card-bookmark {
+    min-width: 300px;
+    padding: 5px;
+  }
+  .tags-body-container {
+    flex-wrap: wrap;
+  }
+  .header-card,
+  .body-card-bookmark {
+    padding: 5px;
+  }
+  .footer-card {
+    justify-content: center;
+  }
+  .modal-add-bookmarks {
+    width: 90%;
+    padding: 5px;
+    position: fixed;
+  }
+  .overlay-modal {
+    position: fixed;
+    height: 100%;
+  }
+  .modal-add-bookmarks h3 {
+    width: 80%;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .close-modal {
+    top: 0;
+    right: 0;
+    border-radius: 20px;
+  }
+  .form-bookmark {
+    padding: 10px;
+    gap: 5px;
+  }
+  .form-div {
+    gap: 5px;
+    width: 100%;
+  }
+  .form-div label {
+    font-size: 14px;
+  }
+  .form-div .tagsSlt {
+    width: 150px;
+  }
+  .selectTagsContainer {
+    left: 45%;
+  }
+  .selectTagsContainer.expand {
+    height: 360px;
+  }
+}

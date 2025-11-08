@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark Manager</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/css/reset.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <aside class="flex-standart" id="lateral-menu">
+      <div class="btn-aside-close">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </div>
+      <div class="title-styled">
+        <a href="index.html">
+          <ion-icon name="bookmark-outline"></ion-icon>
+          <h2>Bookmark Maneger</h2>
+        </a>
+      </div>
+      <div class="reorganizar-pagina flex-standart">
+        <div class="title-styled" id="home-all">
+          <ion-icon name="home-outline" class=""></ion-icon>
+          <h3>Home</h3>
+        </div>
+        <div class="title-styled" id="home-arquives">
+          <ion-icon name="archive-outline"></ion-icon>
+          <h3>Arquivos</h3>
+        </div>
+      </div>
+      <div class="tags-container">
+        <h3>Tags</h3>
+      </div>
+    </aside>
+    <main>
+      <header class="main-header flex-standart">
+        <div class="btn-aside-show">
+          <ion-icon name="reorder-four-outline"></ion-icon>
+        </div>
+        <div class="search-book flex-standart">
+          <ion-icon name="search-outline" id="btn-search"></ion-icon>
+          <input
+            type="search"
+            name="edSearch"
+            id="edSearch"
+            placeholder="search..."
+          />
+        </div>
+        <div class="container-add-bookmark flex-standart">
+          <div class="btn-add-bookmark flex-standart">
+            <ion-icon name="add-outline"></ion-icon>
+            <span>Add Bookmark</span>
+          </div>
+          <div class="perfil-photo">
+            <img src="https://picsum.photos/300/300" alt="perfil photo" />
+          </div>
+        </div>
+      </header>
+      <article class="all-bookmarks">
+        <header class="all-bookmarks-header flex-standart">
+          <h2 class="title-bookmarks flex-standart">All bookmarks</h2>
+          <div class="btn-order-by">
+            <ion-icon name="arrow-down-outline"></ion-icon>
+            <ion-icon name="arrow-up-outline"></ion-icon>
+            <span>Sort by</span>
+          </div>
+        </header>
+        <section class="bookmark-container flex-standart"></section>
+      </article>
+      <div class="overlay-modal"></div>
+      <article class="modal-add-bookmarks">
+        <header class="modal-header flex-standart">
+          <h3>Bookmark create - Crie seu bookmark aqui</h3>
+          <span class="close-modal flex-standart">X</span>
+        </header>
+
+        <form class="form-bookmark flex-standart">
+          <div class="form-div">
+            <label for="edName">Nome do Bookmarker:</label>
+            <input
+              type="text"
+              name="edName"
+              id="edName"
+              placeholder="informe o nome do bookmark..."
+            />
+          </div>
+          <div class="form-div">
+            <label for="edURL">Adicine o link:</label>
+            <input type="url" name="edURL" id="edURL" placeholder="url..." />
+          </div>
+          <div class="form-div">
+            <label for="edInfo">Sobre o bookmark:</label>
+            <textarea
+              name="edInfo"
+              id="edInfo"
+              placeholder="informações sobre o bookmark aqui..."
+            ></textarea>
+          </div>
+          <div class="form-div">
+            <label class="tagsSlt"> Tags do bookmark: </label>
+            <div class="selectTagsContainer"></div>
+          </div>
+          <button id="bookmark-add-btn">Adicionar bookmark</button>
+        </form>
+      </article>
+    </main>
+    <script src="src/js/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src=""></script>
+  </body>
+</html>
