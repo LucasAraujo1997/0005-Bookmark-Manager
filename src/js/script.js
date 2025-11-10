@@ -420,33 +420,43 @@ btnSubmitForm.addEventListener("click", (ev) => {
   ).map((chk) => chk.nextElementSibling.textContent);
 
   const editIndex = btnSubmitForm.dataset.editIndex;
+  try {
+    const name = edName.value.trim();
+    const url = edURL.value.trim();
+    const info = edInfo.value.trim();
 
-  if (editIndex !== undefined && editIndex !== "") {
-    // update
-    const book = bookmarkDB[editIndex];
+    if (!name || !url || !info || tagSelected.length === 0) {
+      throw new Error("Dados vazios!!");
+    }
+    if (editIndex !== undefined && editIndex !== "") {
+      // update
+      const book = bookmarkDB[editIndex];
 
-    book.name = edName.value;
-    book.link = edURL.value;
-    book.description = edInfo.value;
-    book.tags = tagSelected;
+      book.name = name;
+      book.link = url;
+      book.description = info;
+      book.tags = tagSelected;
 
-    delete btnSubmitForm.dataset.editIndex;
-  } else {
-    bookmarkDB.push({
-      name: edName.value,
-      link: edURL.value,
-      description: edInfo.value,
-      tags: tagSelected,
-      archived: false,
-    });
+      delete btnSubmitForm.dataset.editIndex;
+    } else {
+      bookmarkDB.push({
+        name: name,
+        link: url,
+        description: info,
+        tags: tagSelected,
+        archived: false,
+      });
+    }
+
+    localStorage.setItem("bookmarkDB", JSON.stringify(bookmarkDB));
+
+    renderCards();
+
+    tagsContainer.innerHTML = "";
+    tagsRender(tagsContainer);
+  } catch (error) {
+    alert(error.message);
   }
-
-  localStorage.setItem("bookmarkDB", JSON.stringify(bookmarkDB));
-
-  renderCards();
-
-  tagsContainer.innerHTML = "";
-  tagsRender(tagsContainer);
 
   edName.value = "";
   edURL.value = "";
