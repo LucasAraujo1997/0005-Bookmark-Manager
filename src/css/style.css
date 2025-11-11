@@ -187,7 +187,6 @@ main {
   width: 100%;
   border-radius: 50%;
 }
-
 /* main-article-all-bookmarker */
 .all-bookmarks {
   padding: 1rem;
@@ -207,9 +206,10 @@ main {
 .btn-order-by ion-icon:nth-child(1) {
   margin-right: -6px;
 }
-
 /* container-card-bookmarker */
 .bookmark-container {
+  max-width: 1324px;
+  height: 81vh;
   display: flex;
   flex-direction: row;
   padding: 1rem 10px;
@@ -217,6 +217,20 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.bookmark-container::-webkit-scrollbar {
+  width: 6px;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.bookmark-container:hover::-webkit-scrollbar {
+  opacity: 1;
+}
+.bookmark-container::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 10px;
 }
 .card-bookmark {
   min-width: 320px;
